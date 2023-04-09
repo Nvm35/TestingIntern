@@ -51,7 +51,7 @@ public class LocationController {
 
     @GetMapping("/locations/{locationId}/users/")
     public ResponseEntity<?> getUsersFromLocation(@PathVariable Long locationId) {
-        List<UserLocation> userLocations = userLocationRepository.findUserLocationBy(locationId);
+        List<UserLocation> userLocations = userLocationRepository.findPersonByLocation(locationId);
         List<Person> users = new ArrayList<>();
         userLocations.forEach(
                 userLocation -> users.add(userLocation.getPerson())

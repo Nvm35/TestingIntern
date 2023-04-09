@@ -1,6 +1,7 @@
 package com.testingintern.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "locations")
@@ -18,7 +19,9 @@ public class Location {
     public Location() {
     }
 
+    @NotNull
     private String locationName;
+    @NotNull
     private String address;
 
     public Long getId() {

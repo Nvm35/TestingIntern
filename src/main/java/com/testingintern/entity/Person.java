@@ -1,6 +1,8 @@
 package com.testingintern.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="persons")
@@ -15,11 +17,14 @@ public class Person {
         this.email = email;
     }
 
-    private String name;
-
     public Person() {
-
     }
+
+    @NotNull
+    private String name;
+    @Email
+    private String email;
+
 
     public Long getId() {
         return id;
@@ -40,8 +45,6 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private String email;
 
 
 

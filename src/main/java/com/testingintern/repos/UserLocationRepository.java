@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface UserLocationRepository extends JpaRepository<UserLocation, Long> {
 
-    List<UserLocation> findUserLocationBy(Long locationId);
+    List<UserLocation> findPersonByLocation(Long locationId);
 
     Optional<UserLocation> findByPersonAndLocation(Long locationId, Long userId);
 
